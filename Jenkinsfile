@@ -6,15 +6,11 @@ pipeline{
                 git 'https://github.com/Rani445-eng/rani_nagwadiya.git'
             }
         }
-        stage('Test'){
+        stage('Creating DockerImage'){
             steps{
-                echo "Testing Completed"
+                sh 'docker build -t rani-pipeline-jdk:latest .'
             }
         }
-        stage('Build'){
-            steps{
-                echo "Build Completed"
-            }
-        }
+        
     }
 }
