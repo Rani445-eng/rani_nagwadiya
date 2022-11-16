@@ -6,9 +6,9 @@ pipeline{
                 git 'https://github.com/Rani445-eng/rani_nagwadiya.git'
             }
         }
-        stage('Run Build'){
+        stage('build image'){
             steps{
-                echo "build here"
+                sh 'docker build -t rani_pipeline_img:latest .'
             }
         }
         
