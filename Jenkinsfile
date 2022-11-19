@@ -13,7 +13,7 @@ pipeline{
         }
         stage('build image'){
             steps{
-                sh 'docker build -t rani_pipeline_img:latest .'
+                echo 'building'
             }
         }
         
