@@ -13,7 +13,7 @@ pipeline{
         }
         stage('build image'){
             steps{
-                echo 'building'
+                echooo 'building'
             }
         }
         
