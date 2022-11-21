@@ -8,12 +8,12 @@ pipeline{
         }
         stage('user name'){
             steps{
-                sh 'whoami'
+                sh 'who0ami'
             }
         }
         stage('build image'){
             steps{
-                echooo 'building'
+                echo 'building'
             }
         }
         
