@@ -8,7 +8,7 @@ pipeline{
         }
         stage('user name'){
             steps{
-                sh 'who0ami'
+                sh 'whoami'
             }
         }
         stage('build image'){
