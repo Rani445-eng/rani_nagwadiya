@@ -11,7 +11,7 @@ pipeline{
         stage('Gradle block'){
             steps{
                 withGradle(){
-                    sh './gradlew -v'
+                    sh './gradlew clean assembleRelease'
                 }
             }
         }
