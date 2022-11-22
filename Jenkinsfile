@@ -20,6 +20,11 @@ pipeline{
                 echo 'mvn test'
             }
         }
+        stage('building'){
+            steps{
+                echo 'mvn build'
+            }
+        }
         
     }
 }
