@@ -7,7 +7,13 @@ pipeline{
                 sh 'docker -v'
             }
         }
+        stage('create image'){
+            steps{
+                sh 'docker build -t rani-img:latest .'
+            }
+        }
     }
+}
         
         //stage('Nodejs'){
           //  steps{
@@ -24,5 +30,5 @@ pipeline{
            
         
         
-    }
+    
 
