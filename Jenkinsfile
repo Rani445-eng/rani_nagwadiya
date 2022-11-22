@@ -15,7 +15,7 @@ pipeline{
         }
         stage('Gradle block'){
             steps{
-                    sh "gradlew -v"
+                    sh "gradle -v"
                
             }
         }
