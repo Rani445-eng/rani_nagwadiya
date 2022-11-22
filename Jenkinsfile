@@ -1,19 +1,23 @@
 pipeline{
     agent any
+    
+    tools{
+        maven 'Maven-3.8.6'
+    }
     stages{
         stage('Git clone'){
             steps{
                 git 'https://github.com/Rani445-eng/rani_nagwadiya.git'
             }
         }
-        stage('user name'){
+        stage('version'){
             steps{
-                sh 'whoami'
+                sh 'mvn -v'
             }
         }
-        stage('build image'){
+        stage('testing'){
             steps{
-                echo 'building..'
+                echo 'mvn test'
             }
         }
         
