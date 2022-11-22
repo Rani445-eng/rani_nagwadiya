@@ -1,7 +1,7 @@
 pipeline{
     agent any
     
-    tool{
+    tools {
         gradle 'Gradle-6.2'
     
     }
