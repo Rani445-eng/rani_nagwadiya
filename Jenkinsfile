@@ -1,14 +1,18 @@
 pipeline{
     agent any
     stages{
-        stage('Git clone'){
+        stage('yarn block'){
             steps{
-                git 'https://github.com/Rani445-eng/rani_nagwadiya.git'
+                nodejs('Node-10.17'){
+                    sh 'npm install'
+                }
             }
         }
-        stage('Run Test'){
+        stage('Gradle block'){
             steps{
-                echo 'test here'
+                withGradle(){
+                    sh './gradlew -v'
+                }
             }
         }
         
