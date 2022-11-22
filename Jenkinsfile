@@ -1,19 +1,22 @@
 pipeline{
     agent any
+    
+    tool{
+        gradle 'Gradle-6.2'
+    
+    }
     stages{
-        stage('Git clone'){
+        stage('yarn block'){
             steps{
-                git 'https://github.com/Rani445-eng/rani_nagwadiya.git'
+                nodejs('Node-10.17'){
+                    sh 'npm install'
+                }
             }
         }
-        stage('user name'){
+        stage('Gradle block'){
             steps{
-                sh 'whoami'
-            }
-        }
-        stage('build image'){
-            steps{
-                echo 'building..'
+                    sh "./gradlew -v"
+               
             }
         }
         
