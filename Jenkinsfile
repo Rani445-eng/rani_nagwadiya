@@ -12,6 +12,19 @@ pipeline{
                 sh 'docker build -t rani-img:latest .'
             }
         }
+        stage('ansible ver'){
+            steps{
+                sh 'ansible --version'
+               
+            }
+        }
+        stage('ansible cmd'){
+            steps{
+                sh 'cat /etc/ansible/ansible.cfg'
+                sh 'ansible localhost -m user -a "name=newbie uid=4000 state=present"'
+               
+            }
+        }
     }
 }
         
