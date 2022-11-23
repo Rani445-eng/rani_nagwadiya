@@ -21,7 +21,8 @@ pipeline{
         stage('ansible cmd'){
             steps{
                 sh 'cat /etc/ansible/ansible.cfg'
-                sh 'ansible localhost -m user -a "name=newbie uid=4000 state=present"'
+                sh 'ansible localhost --list-hosts'
+              //  sh 'ansible localhost -m user -a "name=newbie uid=4000 state=present"'
                
             }
         }
