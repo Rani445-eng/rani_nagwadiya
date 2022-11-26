@@ -1,30 +1,59 @@
+CODE_CHANGE = gitGitChanges()
 pipeline{
     agent any
-    
-    tools{
-        maven 'Maven-3.8.6'
-    }
     stages{
-        stage('Git clone'){
+        stage("build"){
+            when{
+                expression{
+                    BRANCH_NAME == 'third' && CODE_CHANGE == true
+                }
+            }
             steps{
-                git 'https://github.com/Rani445-eng/rani_nagwadiya.git'
+                echo "build block"
             }
         }
-        stage('version'){
+        stage("test"){
+            when{
+                expression{
+                    BRANCH_NAME == 'second'
+                }
+            }
             steps{
-                sh 'mvn -v'
+                echo 'this is test block'
             }
         }
-        stage('testing'){
-            steps{
-                echo 'mvn test'
-            }
-        }
-        stage('building'){
-            steps{
-                echo 'mvn build'
-            }
-        }
-        
-    }
+    
+    
 }
+
+
+//pipeline{
+  //  agent any
+    
+    //tools{
+      //  maven 'Maven-3.8.6'
+    //}
+    //stages{
+      //  stage('Git clone'){
+        //    steps{
+          //      git 'https://github.com/Rani445-eng/rani_nagwadiya.git'
+            //}
+        //}
+        //stage('version'){
+          //  steps{
+            //    sh 'mvn -v'
+            //}
+        //}
+        //stage('testing'){
+          //  steps{
+            //    echo 'mvn test'
+            //}
+       // }
+        //stage('building'){
+          //  steps{
+            //    echo 'mvn build'
+            //}
+        //}
+        
+   // }
+//}
