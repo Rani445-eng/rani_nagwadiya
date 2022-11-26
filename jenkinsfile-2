@@ -1,0 +1,27 @@
+CODE_CHANGE = gitGitChanges()
+pipeline{
+    agent any
+    stages{
+        stage("build"){
+            when{
+                expression{
+                    BRANCH_NAME == 'third' && CODE_CHANGE == true
+                }
+            }
+            steps{
+                echo "build block"
+            }
+        }
+        stage("test"){
+            when{
+                expression{
+                    BRANCH_NAME == 'second'
+                }
+            }
+            steps{
+                echo 'this is test block'
+            }
+        }
+    
+    
+}
