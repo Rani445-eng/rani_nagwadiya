@@ -22,7 +22,7 @@ pipeline{
         
     }
     post{
-        success{
+        failure{
             echo "this is post block"
         }
     }
