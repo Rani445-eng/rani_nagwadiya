@@ -1,6 +1,10 @@
 //CODE_CHANGES = getGitChanges()
 pipeline{
     agent any
+    environment{
+        NEW_VERSION = '1.3.0'
+    }
+    
     stages{
         stage("build"){
             when{
@@ -20,6 +24,7 @@ pipeline{
             }
             steps{
                 echo 'this is test block'
+                echo "test version ${NEW_VERSION}"
             }
         }
     }
