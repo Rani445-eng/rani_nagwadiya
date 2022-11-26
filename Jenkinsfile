@@ -15,10 +15,16 @@ pipeline{
         }
         stage('Gradle block'){
             steps{
-                    sh "gradle -v"
+                    sh "gradleww -v"
                
             }
         }
         
     }
+    post{
+        always{
+            echo "this is post block"
+        }
+    }
+    
 }
