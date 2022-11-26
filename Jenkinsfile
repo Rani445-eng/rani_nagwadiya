@@ -24,7 +24,7 @@ pipeline{
             }
             steps{
                 echo 'this is test block'
-                echo "test version ${NEW_VERSION}"
+                echo 'test version ${NEW_VERSION}'
             }
         }
     }
