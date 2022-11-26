@@ -1,11 +1,11 @@
-CODE_CHANGE = gitGitChanges()
+CODE_CHANGES = gitGitChanges()
 pipeline{
     agent any
     stages{
         stage("build"){
             when{
                 expression{
-                    BRANCH_NAME == 'third' && CODE_CHANGE == true
+                    BRANCH_NAME == 'third' && CODE_CHANGES == true
                 }
             }
             steps{
