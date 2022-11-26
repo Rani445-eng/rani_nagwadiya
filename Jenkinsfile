@@ -7,16 +7,7 @@ pipeline{
     }
     
     stages{
-        stage("build"){
-            when{
-                expression{
-                    BRANCH_NAME == 'third' 
-                }
-            }
-            steps{
-                echo "build block"
-            }
-        }
+        
         stage("test"){
             when{
                 expression{
