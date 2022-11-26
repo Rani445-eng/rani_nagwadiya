@@ -3,6 +3,7 @@ pipeline{
     agent any
     environment{
         NEW_VERSION = '1.3.0'
+        SERVER_CREDENTIALS = credentials('rani-nagwadiya')
     }
     
     stages{
@@ -24,7 +25,8 @@ pipeline{
             }
             steps{
                 echo 'this is test block'
-                echo 'test version ${NEW_VERSION}'
+                echo "test version ${NEW_VERSION}"
+                echo "creds are ${SERVER_CREDENTIALS}"
             }
         }
     }
