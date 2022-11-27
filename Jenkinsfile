@@ -17,13 +17,17 @@ pipeline{
             }
         }
        stage('deploy'){
-                steps{
-                    echo "deploying version ${params.versionn}"
-                }
-            }
-        }
+           steps{
+               echo "deploying version ${params.versionn}"
+           }
+       }
     }
 }
+
+           
+           
+      
+  
 
     
     
