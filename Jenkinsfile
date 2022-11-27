@@ -11,7 +11,16 @@ pipeline{
         stage('init'){
            steps{
                script{
-                   gv = load "script.groovy"
+                   gv = load "script.groovy"    
+                   
+               }
+           }
+       }
+        stage('build'){
+           steps{
+               script{
+                   gv.buildapp()
+               
                }
            }
        }
@@ -22,7 +31,11 @@ pipeline{
                 }
             }
             steps{
-                echo 'testng successfull'
+                script{
+                   gv.testapp()
+               
+               }
+                
             }
         }
         stage('first-top'){
@@ -32,7 +45,10 @@ pipeline{
        }
        stage('deploy'){
            steps{
-               echo "deploying version ${params.versionn}"
+               script{
+                   gv.deployapp()
+               
+               }
            }
        }
     }
