@@ -9,7 +9,7 @@ pipeline{
         stage("test"){
             when{
                 expression{
-                    params.exectuteTests
+                    params.executeTests
                 }
             }
             steps{
