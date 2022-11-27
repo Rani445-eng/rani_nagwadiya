@@ -3,7 +3,7 @@ pipeline{
     parameters{
         string(name: 'version', defaultValue: '', description: 'deploy this on any iris')
         choice(name: 'versionn', choices: ['1.0', '2.0', '3.0'], description: '')
-        booleanParam(name: 'executeTests', deafaultValue: true, description: '')
+        booleanParam(name: 'executeTests', defaultValue: true, description: '')
     }
     stages{
         stage("test"){
