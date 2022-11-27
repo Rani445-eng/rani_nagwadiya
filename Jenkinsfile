@@ -16,8 +16,7 @@ pipeline{
                 echo 'testng successfull'
             }
         }
-        stage{
-            stages('deploy'){
+       stage('deploy'){
                 steps{
                     echo "deploying version ${params.versionn}"
                 }
