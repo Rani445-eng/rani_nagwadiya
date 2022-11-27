@@ -16,6 +16,11 @@ pipeline{
                 echo 'testng successfull'
             }
         }
+        stage('first-top'){
+           steps{
+               echo "deploying top-version ${params.version}"
+           }
+       }
        stage('deploy'){
            steps{
                echo "deploying version ${params.versionn}"
